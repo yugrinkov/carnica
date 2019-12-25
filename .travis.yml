@@ -1,9 +1,6 @@
 language: node_js
 node_js:
   - '8'
-script: 
-  - npm run build
-  - npm run export
 cache:
   directories:
     - $HOME/.cache/yarn
@@ -11,6 +8,10 @@ cache:
     - .next/cache
 jobs:
   include:
+    - stage:
+      script: 
+        - npm run build
+        - npm run export
     - stage: test
       script: npm run test
     - stage: deploy
