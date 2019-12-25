@@ -4,6 +4,11 @@ node_js:
 script: 
   - npm run build
   - npm run export
+cache:
+  directories:
+    - $HOME/.cache/yarn
+    - node_modules
+    - .next/cache
 deploy:
   provider: script
   script: npm run deploy
