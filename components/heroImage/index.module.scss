@@ -1,0 +1,72 @@
+@import '../../styles/variables.scss';
+
+@keyframes scrollDown {
+    0%{
+        opacity: 0;
+        transform: rotate(45deg) translate(-20px,-20px);
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        transform: rotate(45deg) translate(20px,20px);
+    }
+}
+
+.heroImage {
+    position: relative;
+    min-height: 350px;
+
+
+    img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover; 
+        @include desktop {
+            height: auto;
+        }
+    }
+    
+    .content {
+        @include desktop {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0; /* At the bottom. Use top:0 to append it to the top */
+        }
+       
+        background: rgb(0, 0, 0); /* Fallback color */
+        background: rgba(0, 0, 0, 0.7); /* Black background with 0.5 opacity */
+        color: #f1f1f1; /* Grey text */
+        padding-top: $default-padding;
+
+    }
+        .arrow{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 50px;
+            
+            & span {
+                display: block;
+                width: 20px;
+                height: 20px;
+                border-bottom: 5px solid $gold;
+                border-right: 5px solid $gold;
+                transform: rotate(45deg);
+                margin: -5px;
+                animation: scrollDown 2s infinite;
+    
+                &:nth-child(2) {
+                    animation-delay: -0.2s;
+                }
+    
+                &:nth-child(3) {
+                    animation-delay: -0.4s;
+                }
+            }
+        }
+    
+}
