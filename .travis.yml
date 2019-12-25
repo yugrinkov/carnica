@@ -8,7 +8,7 @@ cache:
     - .next/cache
 jobs:
   include:
-    - stage:
+    - stage: build
       script: 
         - npm run build
         - npm run export
