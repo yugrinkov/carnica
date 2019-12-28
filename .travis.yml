@@ -14,13 +14,13 @@ jobs:
         - npm run export
     - stage: test
       script: npm run test
-    - stage: deploy
+    - stage: e2e test & deploy 
       provider: script
-      script: npm run deploy
+      script:
+        - npm run e2e:test
+        - npm run e2e:test:report
+        - npm run deploy
       skip_cleanup: true
       on:
         branch: master
-    - stage: e2e test
-      script: 
-        - npm run e2e:test
-        - npm run e2e:test:report
+        
