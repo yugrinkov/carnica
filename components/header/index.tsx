@@ -16,7 +16,7 @@ const Header: React.FC = () => {
                 <div className={styles.headerContent}>
                     <div className={styles.leftSide}>
                         <Menu />
-                        <h2>Клуб Карника Украина</h2>
+                        <h2 data-test="siteTitle">Клуб Карника Украина</h2>
                     </div>
                     <a className={styles.forumLink} href="http://carnica.ho.ua/forum">
                         <img src={forumIcon} alt="Forum icon" />

@@ -14,6 +14,8 @@ jobs:
         - npm run export
     - stage: test
       script: npm run test
+    - stage: e2e test
+      script: npm run e2e:test
     - stage: deploy
       provider: script
       script: npm run deploy

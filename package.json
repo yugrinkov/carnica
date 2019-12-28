@@ -10,12 +10,18 @@
     "deploy": "now --token=$NOW_TOKEN --prod",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "cypress:local:open": "cross-env CYPRESS_baseUrl=http://localhost:3000 cypress open",
+    "cypress:stage:open": "cross-env CYPRESS_baseUrl=https://carnica.now.sh cypress open",
+    "cypress:local:run": "cross-env CYPRESS_baseUrl=http://localhost:3000 cypress run",
+    "cypress:stage:run": "cross-env CYPRESS_baseUrl=https://carnica.now.sh cypress run",
+    "e2e:test": "npm run build && start-server-and-test start http://localhost:3000 cypress:local:run"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "axios": "^0.19.0",
     "classcat": "^4.0.2",
+    "cypress": "^3.8.1",
     "next": "9.1.2",
     "next-images": "^1.2.0",
     "node-sass": "^4.13.0",
@@ -30,10 +36,12 @@
     "@types/node": "^12.12.6",
     "@types/react": "^16.9.11",
     "babel-jest": "^24.9.0",
+    "cross-env": "^6.0.3",
     "enzyme": "^3.11.0",
     "enzyme-adapter-react-16": "^1.15.2",
     "jest": "^24.9.0",
     "now": "^16.7.0",
+    "start-server-and-test": "^1.10.6",
     "typescript": "^3.7.2"
   }
 }
