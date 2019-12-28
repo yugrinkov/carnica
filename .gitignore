@@ -23,3 +23,8 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/public/cypress
+/cypress/videos
+/cypress/screenshots
+/cypress/reports
