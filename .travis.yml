@@ -12,6 +12,8 @@ jobs:
       script: 
         - npm run build
         - npm run export
+    - stage: eslint
+      script: npx eslint . --ext .ts,.tsx
     - stage: test
       script: npm run test
     - stage: e2e test & deploy 
