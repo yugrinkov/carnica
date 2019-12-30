@@ -8,15 +8,15 @@ cache:
     - .next/cache
 jobs:
   include:
+    - stage: eslint
+      script: npm run eslint
     - stage: build
       script: 
         - npm run build
         - npm run export
-    - stage: eslint
-      script: npx eslint . --ext .ts,.tsx
-    - stage: test
+    - stage: unit tests
       script: npm run test
-    - stage: e2e test & deploy 
+    - stage: e2e tests & deploy 
       provider: script
       script:
         - npm run e2e:test || true
