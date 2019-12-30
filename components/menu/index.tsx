@@ -6,7 +6,6 @@ const Menu = () => {
   const [hidden, setHidden] = useState(true)
   const menu = useRef<HTMLInputElement>(null)
   const menuButton = useRef<HTMLInputElement>(null)
-  let ab = 12
 
   function useOutsideAlerter(ref, callback?) {
     /**

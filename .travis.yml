@@ -8,15 +8,17 @@ cache:
     - .next/cache
 jobs:
   include:
-    - stage: eslint
-      script: npm run eslint
-    - stage: build
-      script: 
+    - stage: eslint & build
+      name: Code quality
+      script:
+        - npm run eslint
         - npm run build
         - npm run export
     - stage: unit tests
+      name: Unit tests (Jest)
       script: npm run test
-    - stage: e2e tests & deploy 
+    - stage: e2e tests & deploy
+      name: End-to-end tests and deployment
       provider: script
       script:
         - npm run e2e:test || true
@@ -25,4 +27,3 @@ jobs:
       skip_cleanup: true
       on:
         branch: master
-        
