@@ -36,5 +36,6 @@ module.exports = {
     '@typescript-eslint/explicit-member-accessibility': 'off',
     'react/prop-types': 'off',
     'prettier/prettier': 'error',
+    '@typescript-eslint/no-unused-vars': 'error',
   },
 }

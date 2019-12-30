@@ -17,16 +17,11 @@
     "cypress:stage:run": "cross-env CYPRESS_baseUrl=https://carnica.now.sh cypress run --reporter mochawesome",
     "e2e:test": "npm run build && start-server-and-test start http://localhost:3000 cypress:local:run",
     "e2e:test:report": "npx mochawesome-report-generator --reportDir public/ --cdn true --charts true cypress/reports/mochawesome/mochawesome.json",
-    "eslint": "npx eslint . --ext .ts,.tsx",
-    "precommit": "lint-staged"
+    "eslint": "npx eslint . --ext .ts,.tsx"
   },
-  "lint-staged": {
-    "*.{ts, tsx}": [
-      "npx eslint . --max-warnings=0",
-      "prettier --write",
-      "git add"
-    ]
-  },
+  "pre-commit": [
+    "eslint"
+  ],
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
     "array-includes": "^3.1.1",
@@ -70,6 +65,7 @@
     "mochawesome-merge": "^2.0.1",
     "mochawesome-report-generator": "^4.0.1",
     "now": "^16.7.0",
+    "pre-commit": "^1.2.2",
     "prettier": "^1.18.2",
     "start-server-and-test": "^1.10.6",
     "typescript": "^3.7.2"
