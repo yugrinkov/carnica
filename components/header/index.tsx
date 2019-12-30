@@ -1,17 +1,17 @@
-import React from "react";
-import Menu from "../menu";
-import cc from "classcat";
-import styles from "./index.module.scss";
+import React from 'react'
+import Menu from '../menu'
+import cc from 'classcat'
+import styles from './index.module.scss'
 
-import forumIcon from "../../public/icons/forum.svg";
+import forumIcon from '../../public/icons/forum.svg'
 
 const Header: React.FC = () => {
   return (
     <header>
       <div
         className={cc({
-          ["container"]: true,
-          [styles.headerContainer]: true
+          ['container']: true,
+          [styles.headerContainer]: true,
         })}
       >
         <div className={styles.headerContent}>
@@ -29,7 +29,7 @@ const Header: React.FC = () => {
         </div>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export default Header;
+export default Header

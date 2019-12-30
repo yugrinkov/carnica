@@ -1,27 +1,31 @@
-import React from "react";
-import axios from "axios";
-import Layout from "../components/layout";
-import HeroImage from "../components/heroImage";
-import { NextPage } from "next";
+import React from 'react'
+import axios from 'axios'
+import Layout from '../components/layout'
+import HeroImage from '../components/heroImage'
+import { NextPage } from 'next'
 
-interface IndexProps {
-  data?: any;
+interface Journal {
+  title: string
 }
 
-const Home: NextPage<IndexProps> = ({ data }) => (
+interface IndexProps {
+  data: Journal[]
+}
+
+const Home: NextPage<IndexProps> = props => (
   <Layout>
     <HeroImage />
     <div className="container">
-      <h1> {data[0].title} </h1>
+      <h1> {props.data[0].title} </h1>
     </div>
   </Layout>
-);
+)
 
-Home.getInitialProps = async ({ req }) => {
+Home.getInitialProps = async () => {
   const res = await axios.get(
-    "https://intense-sands-31533.herokuapp.com/journals"
-  );
-  return { data: res.data };
-};
+    'https://intense-sands-31533.herokuapp.com/journals',
+  )
+  return { data: res.data }
+}
 
-export default Home;
+export default Home

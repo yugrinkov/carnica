@@ -1,13 +1,12 @@
-import React, { useRef, useEffect, useState } from "react";
-import cc from "classcat";
-import styles from "./index.module.scss";
-
-import menuIcon from "../../public/icons/menu.svg";
+import React, { useRef, useEffect, useState } from 'react'
+import styles from './index.module.scss'
+import menuIcon from '../../public/icons/menu.svg'
 
 const Menu = () => {
-  const [hidden, setHidden] = useState(true);
-  const menu = useRef<HTMLInputElement>(null);
-  const menuButton = useRef<HTMLInputElement>(null);
+  const [hidden, setHidden] = useState(true)
+  const menu = useRef<HTMLInputElement>(null)
+  const menuButton = useRef<HTMLInputElement>(null)
+  let ab = 12
 
   function useOutsideAlerter(ref, callback?) {
     /**
@@ -15,38 +14,38 @@ const Menu = () => {
      */
     function handleClickOutside(event) {
       if (!hidden && ref.current && !ref.current.contains(event.target)) {
-        if (callback) callback();
+        if (callback) callback()
       }
     }
 
     useEffect(() => {
       // Bind the event listener
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside)
       return () => {
         // Unbind the event listener on clean up
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
-    });
+        document.removeEventListener('mousedown', handleClickOutside)
+      }
+    })
   }
 
   const showMenu = () => {
-    const offsetWidth = document.body.offsetWidth;
-    const containerWidth = 1150;
+    const offsetWidth = document.body.offsetWidth
+    const containerWidth = 1150
 
     if (offsetWidth < containerWidth) {
-      menu.current.style.width = `60%`;
+      menu.current.style.width = `60%`
     } else {
-      menu.current.style.width = `${menuButton.current.offsetLeft + 55}px`;
+      menu.current.style.width = `${menuButton.current.offsetLeft + 55}px`
     }
-    setHidden(false);
-  };
+    setHidden(false)
+  }
 
-  const hideMenu = e => {
-    menu.current.style.width = "0px";
-    setHidden(true);
-  };
+  const hideMenu = () => {
+    menu.current.style.width = '0px'
+    setHidden(true)
+  }
 
-  useOutsideAlerter(menu, hideMenu);
+  useOutsideAlerter(menu, hideMenu)
 
   return (
     <React.Fragment>
@@ -63,7 +62,7 @@ const Menu = () => {
         <a href="#">Contact</a>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Menu;
+export default Menu
