@@ -17,7 +17,7 @@
     "cypress:stage:open": "cross-env CYPRESS_baseUrl=https://carnica.now.sh cypress open",
     "cypress:local:run": "cross-env CYPRESS_baseUrl=http://localhost:3000 cypress run",
     "cypress:stage:run": "cross-env CYPRESS_baseUrl=https://carnica.now.sh cypress run --reporter mochawesome",
-    "e2e:test": "npm run build && start-server-and-test start http://localhost:3000 cypress:local:run",
+    "e2e:test": "npm run build:local && start-server-and-test start http://localhost:3000 cypress:local:run",
     "e2e:test:report": "npx mochawesome-report-generator --reportDir public/ --cdn true --charts true cypress/reports/mochawesome/mochawesome.json",
     "eslint": "npx eslint . --ext .ts,.tsx",
     "json:generate": "cross-env CARNICA_API_URL=https://intense-sands-31533.herokuapp.com node jsonGeneration"
