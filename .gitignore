@@ -25,8 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 /public/cypress
-/public/api
 
 /cypress/videos
 /cypress/screenshots
 /cypress/reports
+
+/api

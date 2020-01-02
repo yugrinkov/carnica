@@ -32,7 +32,7 @@ module.exports = class JsonGenerator {
 
   writeFile(responseData, contentTypeName) {
     fs.writeFile(
-      `public/api/${contentTypeName}.json`,
+      `api/${contentTypeName}.json`,
       JSON.stringify(responseData),
       'utf8',
       err => this.onWriteCallback(err, contentTypeName),
