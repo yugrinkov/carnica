@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next dev",
+    "build:local": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next build",
     "build": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=https://carnica.now.sh next build",
     "build:prod": "cross-env CARNICA_PUBLIC_URL=[PROD_URL] next build",
     "export": "next export",

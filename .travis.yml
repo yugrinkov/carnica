@@ -13,7 +13,6 @@ jobs:
       script:
         - npm run eslint
         - npm run build
-        - npm run export
     - stage: unit tests
       name: Unit tests (Jest)
       script: npm run test
