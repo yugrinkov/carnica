@@ -22,9 +22,7 @@ const Home: NextPage<IndexProps> = props => (
 )
 
 Home.getInitialProps = async () => {
-  const res = await axios.get(
-    'https://intense-sands-31533.herokuapp.com/journals',
-  )
+  const res = await axios.get(process.env.CARNICA_PUBLIC_URL + '/api/journals')
   return { data: res.data }
 }
 
