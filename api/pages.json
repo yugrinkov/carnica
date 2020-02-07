@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "5e3d60c074acbc0017e3cc4f",
+    "linkText": "Главная",
+    "linkReference": "/",
+    "linkTarget": "_self",
+    "createdAt": "2020-02-07T13:06:08.112Z",
+    "updatedAt": "2020-02-07T13:06:08.148Z",
+    "__v": 0,
+    "id": "5e3d60c074acbc0017e3cc4f"
+  },
+  {
+    "_id": "5e3d60d474acbc0017e3cc50",
+    "linkText": "Клуб Карники",
+    "linkReference": "/club",
+    "linkTarget": "_self",
+    "createdAt": "2020-02-07T13:06:28.163Z",
+    "updatedAt": "2020-02-07T13:06:28.174Z",
+    "__v": 0,
+    "id": "5e3d60d474acbc0017e3cc50"
+  },
+  {
+    "_id": "5e3d60f174acbc0017e3cc51",
+    "linkText": "О Карнике",
+    "createdAt": "2020-02-07T13:06:57.590Z",
+    "updatedAt": "2020-02-07T13:08:01.108Z",
+    "__v": 0,
+    "linkReference": "/carnica",
+    "linkTarget": "_self",
+    "id": "5e3d60f174acbc0017e3cc51"
+  },
+  {
+    "_id": "5e3d613974acbc0017e3cc52",
+    "linkText": "Партнерство",
+    "createdAt": "2020-02-07T13:08:09.398Z",
+    "updatedAt": "2020-02-07T13:08:29.029Z",
+    "__v": 0,
+    "linkReference": "/partnership",
+    "linkTarget": "_self",
+    "id": "5e3d613974acbc0017e3cc52"
+  },
+  {
+    "_id": "5e3d616474acbc0017e3cc53",
+    "linkText": "Продукция",
+    "createdAt": "2020-02-07T13:08:52.105Z",
+    "updatedAt": "2020-02-07T13:09:11.328Z",
+    "__v": 0,
+    "linkReference": "/products",
+    "linkTarget": "_self",
+    "id": "5e3d616474acbc0017e3cc53"
+  },
+  {
+    "_id": "5e3d625a74acbc0017e3cc54",
+    "linkText": "Форум",
+    "linkReference": "http://carnica.ho.ua/forum",
+    "linkTarget": "_blank",
+    "createdAt": "2020-02-07T13:12:58.245Z",
+    "updatedAt": "2020-02-07T13:12:58.252Z",
+    "__v": 0,
+    "id": "5e3d625a74acbc0017e3cc54"
+  }
+]

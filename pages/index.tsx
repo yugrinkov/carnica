@@ -10,16 +10,19 @@ interface Journal {
 
 interface IndexProps {
   data: Journal[]
+  pages?: any
 }
 
-const Home: NextPage<IndexProps> = props => (
-  <Layout>
-    <HeroImage />
-    <div className="container">
-      <h1> {props.data[0].title} </h1>
-    </div>
-  </Layout>
-)
+const Home: NextPage<IndexProps> = props => {
+  return (
+    <Layout pages={props.pages}>
+      <HeroImage />
+      <div className="container">
+        <h1> {props.data[0].title} </h1>
+      </div>
+    </Layout>
+  )
+}
 
 Home.getInitialProps = async () => {
   const res = await axios.get(process.env.CARNICA_PUBLIC_URL + '/api/journals')

@@ -9,10 +9,10 @@ cache:
 jobs:
   include:
     - stage: eslint & build
-      name: Code quality
+      name: Code quality and compilation
       script:
         - npm run eslint
-        - npm run build
+        - npm run build:local
         - npm run start &
         - npm run export
     - stage: unit tests

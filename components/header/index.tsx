@@ -1,31 +1,43 @@
 import React from 'react'
-import Menu from '../menu'
-import cc from 'classcat'
-import styles from './index.module.scss'
+import Link from '../activeLink'
 
-import forumIcon from '../../public/icons/forum.svg'
-
-const Header: React.FC = () => {
+const Header: React.FC<any> = ({ pages = [] }) => {
   return (
     <header>
-      <div
-        className={cc({
-          ['container']: true,
-          [styles.headerContainer]: true,
-        })}
-      >
-        <div className={styles.headerContent}>
-          <div className={styles.leftSide}>
-            <Menu />
-            <h2 data-test="siteTitle">Клуб Карника Украина</h2>
+      <div className="container">
+        <div
+          className="navbar navbar-default navbar-static-top"
+          role="navigation"
+        >
+          <div className="navbar-header">
+            <button
+              className="navbar-toggle"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+            >
+              <span className="icon icon-bar"></span>
+              <span className="icon icon-bar"></span>
+              <span className="icon icon-bar"></span>
+            </button>
+            <a href="#" className="navbar-brand">
+              <img src="" className="img-responsive" alt="logo" />
+            </a>
           </div>
-          <a className={styles.forumLink} href="http://carnica.ho.ua/forum">
-            <img src={forumIcon} alt="Forum icon" />
-            <div className={styles.linkText}>
-              <p className={styles.line1}>Форум</p>
-              <p className={styles.line2}>24/7</p>
-            </div>
-          </a>
+          <div className="collapse navbar-collapse">
+            <ul className="nav navbar-nav navbar-right">
+              {pages.map(page => (
+                <li key={page.id}>
+                  {page.linkTarget === '_self' ? (
+                    <Link href={page.linkReference}>
+                      <a>{page.linkText}</a>
+                    </Link>
+                  ) : (
+                    <a href={page.linkReference}>{page.linkText}</a>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </header>
