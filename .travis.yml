@@ -1,11 +1,6 @@
 language: node_js
 node_js:
   - '8'
-cache:
-  directories:
-    - $HOME/.cache/yarn
-    - node_modules
-    - .next/cache
 jobs:
   include:
     - stage: eslint & build
