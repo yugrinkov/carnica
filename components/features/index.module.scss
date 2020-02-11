@@ -1,0 +1,19 @@
+@import '../../styles/variables.scss';
+h2 {
+  margin: 20px 0;
+}
+h3 {
+  color: $gold;
+  margin-bottom: 20px;
+}
+.feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 250px;
+}
+.description {
+  font-size: 12px;
+  text-align: left;
+}

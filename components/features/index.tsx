@@ -1,40 +1,36 @@
 import React from 'react'
+import styles from './index.module.scss'
+import Link from 'next/link'
 
-const Features = () => {
+const Features = props => {
+  const { features = [] } = props
+
+  const getDescription = description => {
+    return { __html: '*' + description }
+  }
   return (
     <div className="divider">
       <div className="container">
         <div className="row">
-          <div className="col-md-4 col-sm-6">
-            <div className="divider-wrapper divider-one">
-              <i className="fa fa-laptop"></i>
-              <h2>Responsive</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-6">
-            <div className="divider-wrapper divider-two">
-              <i className="fa fa-mobile"></i>
-              <h2>Easy to use</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet.
-              </p>
-            </div>
-          </div>
-          <div className="col-md-4 col-sm-12">
-            <div className="divider-wrapper divider-three">
-              <i className="fa fa-life-ring"></i>
-              <h2>Quick Support</h2>
-              <p>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed
-                diam nonummy nibh euismod tincidunt ut laoreet.
-              </p>
-            </div>
-          </div>
+          {features.map((feature, index) => (
+            <Link key={feature.id} href="/products">
+              <div className="col-md-4 col-sm-6">
+                <div className={`divider-wrapper divider-${index + 1}`}>
+                  <div className={styles.feature}>
+                    <i className="fa fa-cart-arrow-down"></i>
+                    <h2>{feature.title}</h2>
+                    <h3>{feature.priceLabel}*</h3>
+                  </div>
+                  <p
+                    className={styles.description}
+                    dangerouslySetInnerHTML={getDescription(
+                      feature.description,
+                    )}
+                  ></p>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </div>
