@@ -3,6 +3,7 @@ import axios from 'axios'
 import Layout from '../components/layout'
 import HeroImage from '../components/heroImage'
 import Features from '../components/features'
+import Section from '../components/section'
 import { NextPage } from 'next'
 
 interface Journal {
@@ -11,6 +12,8 @@ interface Journal {
 
 interface HomePage {
   title?: string
+  sectionImage: any
+  sectionText: string
 }
 
 interface Feature {
@@ -18,17 +21,26 @@ interface Feature {
 }
 
 interface IndexProps {
-  homePageData: HomePage[]
+  homePageData: HomePage
   features: Feature[]
   pages?: any
   contacts?: any
 }
 
-const Home: NextPage<IndexProps> = props => {
+const Home: NextPage<IndexProps> = ({
+  homePageData,
+  pages,
+  features,
+  contacts,
+}) => {
   return (
-    <Layout pages={props.pages} contact={props.contacts[0]}>
-      <HeroImage bannerData={props.homePageData} />
-      <Features features={props.features} />
+    <Layout pages={pages} contact={contacts[0]}>
+      <HeroImage bannerData={homePageData} />
+      <Features features={features} />
+      <Section
+        image={homePageData.sectionImage}
+        text={homePageData.sectionText}
+      />
     </Layout>
   )
 }
