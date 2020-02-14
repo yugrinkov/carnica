@@ -144,6 +144,10 @@
     color: #fff;
     text-align: center;
   }
+
+  .benefits {
+    padding: 20px 0;
+  }
   .divider .fa {
     border: 2px solid #fff;
     border-radius: 50%;
@@ -163,9 +167,16 @@
     transition: all 0.4s ease-in;
   }
 
+  .benefits .divider-wrapper {
+    bottom: 0;
+  }
+
   @media (min-width: 768px) {
     .divider .divider-wrapper {
       min-height: 740px;
+    }
+    .benefits .divider-wrapper {
+      min-height: 450px;
     }
   }
   @media (min-width: 992px) {
@@ -176,6 +187,10 @@
   .divider .divider-wrapper:hover {
     bottom: 60px;
     cursor: pointer;
+  }
+  .benefits .divider-wrapper:hover {
+    bottom: 0;
+    cursor: auto;
   }
   .divider .divider-1 {
     background: #c14000;
@@ -195,6 +210,7 @@
   }
   #about {
     padding-top: 40px;
+    font-size: 14px;
   }
   #about .container {
     background: #191919;
@@ -204,7 +220,7 @@
     margin: 0;
   }
   #about .about-des {
-    padding-top: 20px;
+    padding-top: 0;
     padding-left: 30px;
     padding-right: 20px;
   }
