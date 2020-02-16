@@ -5,6 +5,7 @@ import HeroImage from '../components/heroImage'
 import Features from '../components/features'
 import Section from '../components/section'
 import { NextPage } from 'next'
+import Head from 'next/head'
 
 interface Journal {
   title: string
@@ -35,6 +36,9 @@ const Home: NextPage<IndexProps> = ({
 }) => {
   return (
     <Layout pages={pages} contact={contacts[0]}>
+      <Head>
+        <title>Клуб Карники (Украина) - Главная</title>
+      </Head>
       <HeroImage bannerData={homePageData} />
       <Features features={features} />
       <Section

@@ -19,13 +19,15 @@ const Header: React.FC<any> = ({ pages = [] }) => {
               <span className="icon icon-bar"></span>
               <span className="icon icon-bar"></span>
             </button>
-            <a href="#" className="navbar-brand">
-              <img
-                src="/images/logo.png"
-                className="img-responsive logo"
-                alt="logo"
-              />
-            </a>
+            <Link href="/">
+              <a href="#" className="navbar-brand">
+                <img
+                  src="/images/logo.png"
+                  className="img-responsive logo"
+                  alt="logo"
+                />
+              </a>
+            </Link>
           </div>
           <div className="collapse navbar-collapse">
             <ul className="nav navbar-nav navbar-right">

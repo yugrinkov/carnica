@@ -5,9 +5,13 @@ import HeroImage from '../components/heroImage'
 import Section from '../components/section'
 import Features from '../components/features'
 import { NextPage } from 'next'
+import Head from 'next/head'
 
 const Club: NextPage<any> = ({ pageData, pages, contacts, benefits = [] }) => (
   <Layout pages={pages} contact={contacts[0]}>
+    <Head>
+      <title>Клуб Карники (Украина) - О нас</title>
+    </Head>
     <HeroImage bannerData={pageData} />
     <Section image={pageData.sectionImage} text={pageData.sectionText} />
     <Features features={benefits} isBenefits={true} />
