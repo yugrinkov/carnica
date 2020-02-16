@@ -10,7 +10,13 @@ const ActiveLink = ({ router, children, href, activeClassName = 'active' }) => {
     className = `${className} ${activeClassName}`.trim()
   }
 
-  return <Link href={href}>{React.cloneElement(child, { className })}</Link>
+  const asLink = href === '/' ? href : href + '.html'
+
+  return (
+    <Link as={asLink} href={href}>
+      {React.cloneElement(child, { className })}
+    </Link>
+  )
 }
 
 export default withRouter(ActiveLink)

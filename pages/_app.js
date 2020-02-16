@@ -3,6 +3,8 @@ import axios from 'axios'
 import App from 'next/app'
 import uuidv4 from 'uuid/v4'
 import Loading from '../components/loading'
+import pages from '../api/pages.json'
+import contacts from '../api/contacts.json'
 
 class MyApp extends App {
   state = {
@@ -10,15 +12,11 @@ class MyApp extends App {
     loadingKey: null,
   }
   static async getInitialProps({ Component, ctx }) {
-    const pages = await axios.get(process.env.CARNICA_PUBLIC_URL + '/api/pages')
-    const contacts = await axios.get(
-      process.env.CARNICA_PUBLIC_URL + '/api/contacts',
-    )
     const pageProps = Component.getInitialProps
       ? await Component.getInitialProps(ctx)
       : {}
 
-    return { pageProps, pages: pages.data, contacts: contacts.data }
+    return { pageProps, pages: pages, contacts: contacts }
   }
 
   constructor(props) {

@@ -1,11 +1,12 @@
 import React from 'react'
-import axios from 'axios'
 import Layout from '../components/layout'
 import HeroImage from '../components/heroImage'
 import Section from '../components/section'
 import Features from '../components/features'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import clubpages from '../api/clubpages.json'
+import benefits from '../api/benefits.json'
 
 const Club: NextPage<any> = ({ pageData, pages, contacts, benefits = [] }) => (
   <Layout pages={pages} contact={contacts[0]}>
@@ -23,11 +24,7 @@ const Club: NextPage<any> = ({ pageData, pages, contacts, benefits = [] }) => (
 )
 
 Club.getInitialProps = async () => {
-  const res = await axios.get(process.env.CARNICA_PUBLIC_URL + '/api/clubpages')
-  const benefits = await axios.get(
-    process.env.CARNICA_PUBLIC_URL + '/api/benefits',
-  )
-  return { pageData: res.data[0], benefits: benefits.data }
+  return { pageData: clubpages[0], benefits: benefits }
 }
 
 export default Club

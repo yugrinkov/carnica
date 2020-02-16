@@ -1,10 +1,11 @@
 import React from 'react'
-import axios from 'axios'
 import Layout from '../components/layout'
 import HeroImage from '../components/heroImage'
 import Features from '../components/features'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import productspages from '../api/productspages.json'
+import products from '../api/products.json'
 
 const Products: NextPage<any> = ({ pageData, pages, contacts, products }) => (
   <Layout pages={pages} contact={contacts[0]}>
@@ -21,13 +22,7 @@ const Products: NextPage<any> = ({ pageData, pages, contacts, products }) => (
 )
 
 Products.getInitialProps = async () => {
-  const res = await axios.get(
-    process.env.CARNICA_PUBLIC_URL + '/api/productspages',
-  )
-  const products = await axios.get(
-    process.env.CARNICA_PUBLIC_URL + '/api/products',
-  )
-  return { pageData: res.data[0], products: products.data.reverse() }
+  return { pageData: productspages[0], products: products.reverse() }
 }
 
 export default Products

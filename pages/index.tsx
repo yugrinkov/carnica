@@ -1,11 +1,12 @@
 import React from 'react'
-import axios from 'axios'
 import Layout from '../components/layout'
 import HeroImage from '../components/heroImage'
 import Features from '../components/features'
 import Section from '../components/section'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import homePages from '../api/homepages.json'
+import features from '../api/features.json'
 
 interface Journal {
   title: string
@@ -54,14 +55,9 @@ const Home: NextPage<IndexProps> = ({
 }
 
 Home.getInitialProps = async () => {
-  const res = await axios.get(process.env.CARNICA_PUBLIC_URL + '/api/homepages')
-  const features = await axios.get(
-    process.env.CARNICA_PUBLIC_URL + '/api/features',
-  )
-
   return {
-    homePageData: res.data[0],
-    features: features.data,
+    homePageData: homePages[0],
+    features: features,
   }
 }
 

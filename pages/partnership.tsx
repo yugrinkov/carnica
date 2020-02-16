@@ -1,10 +1,10 @@
 import React from 'react'
-import axios from 'axios'
 import Layout from '../components/layout'
 import HeroImage from '../components/heroImage'
 import Section from '../components/section'
 import { NextPage } from 'next'
 import Head from 'next/head'
+import partnershippages from '../api/partnershippages.json'
 
 const PartnerShip: NextPage<any> = ({ contacts, pageData, pages }) => (
   <Layout pages={pages} contact={contacts[0]}>
@@ -21,10 +21,7 @@ const PartnerShip: NextPage<any> = ({ contacts, pageData, pages }) => (
 )
 
 PartnerShip.getInitialProps = async () => {
-  const res = await axios.get(
-    process.env.CARNICA_PUBLIC_URL + '/api/partnershippages',
-  )
-  return { pageData: res.data[0] }
+  return { pageData: partnershippages[0] }
 }
 
 export default PartnerShip
