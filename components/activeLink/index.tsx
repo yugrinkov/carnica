@@ -10,8 +10,10 @@ const ActiveLink = ({ router, children, href, activeClassName = 'active' }) => {
     className = `${className} ${activeClassName}`.trim()
   }
 
-  const asLink = href === '/' ? href : href + '.html'
-
+  const asLink =
+    href === '/' || href === 'http://carnica.ho.ua/forum'
+      ? href
+      : href + '.html'
   return (
     <Link as={asLink} href={href}>
       {React.cloneElement(child, { className })}

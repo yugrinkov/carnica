@@ -1,7 +1,11 @@
 import React from 'react'
-import Link from '../activeLink'
+import Link from 'next/link'
 
 const Header: React.FC<any> = ({ pages = [] }) => {
+  const getPageLink = ref => {
+    if (ref === 'http://carnica.ho.ua/forum') return ref
+    return ref === '/' ? ref + 'index.html' : ref + '.html'
+  }
   return (
     <header>
       <div className="container">
@@ -34,7 +38,7 @@ const Header: React.FC<any> = ({ pages = [] }) => {
               {pages.map(page => (
                 <li key={page.id}>
                   {page.linkTarget === '_self' ? (
-                    <Link href={page.linkReference}>
+                    <Link href={getPageLink(page.linkReference)}>
                       <a>{page.linkText}</a>
                     </Link>
                   ) : (
