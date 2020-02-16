@@ -16,6 +16,9 @@ h3 {
 .description {
   font-size: 12px;
   text-align: left;
+  @media (max-width: 992px) {
+    font-size: 16px;
+  }
 }
 .seller {
   font-size: 14px;
@@ -23,7 +26,7 @@ h3 {
   justify-content: center;
   align-items: center;
   line-height: 40px;
-  @media (max-width: 1200px) {
+  @media (max-width: 992px) {
     font-size: 12px;
   }
 }

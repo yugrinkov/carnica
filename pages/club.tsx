@@ -11,6 +11,10 @@ const Club: NextPage<any> = ({ pageData, pages, contacts, benefits = [] }) => (
   <Layout pages={pages} contact={contacts[0]}>
     <Head>
       <title>Клуб Карники (Украина) - О нас</title>
+      <meta
+        name="Description"
+        content="Мы – Клуб Карники (Украина) – объединение ведущих карниководов нашей страны. Начинали вчетвером – Дмитрий Гриньков (Киев), Андрей Пискорский (Николаевская обл.), Андрей Коноплин и Александр Чумаков (оба – Луганская обл.). Позже к нам присоединились другие ведущие карниководы страны - Андрей Голод (Сумчанин), Богдан Болюбаш (Львовщина), Виталий Липатов и Владимир Меланченко (оба - Киевщина)."
+      ></meta>
     </Head>
     <HeroImage bannerData={pageData} />
     <Section image={pageData.sectionImage} text={pageData.sectionText} />

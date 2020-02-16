@@ -38,6 +38,10 @@ const Home: NextPage<IndexProps> = ({
     <Layout pages={pages} contact={contacts[0]}>
       <Head>
         <title>Клуб Карники (Украина) - Главная</title>
+        <meta
+          name="Description"
+          content="Селекционная пасека «Карника» – ядро, вокруг которого возникло объединение «Клуб Карники» (Украина). В зиму ушло свыше 150 пчелоединиц (семьи, отводки, нуклеусы), которые размещаются на двух точках: в Киеве и области. Нуклеусный парк – свыше 500 маткомест."
+        ></meta>
       </Head>
       <HeroImage bannerData={homePageData} />
       <Features features={features} />

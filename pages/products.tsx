@@ -10,6 +10,10 @@ const Products: NextPage<any> = ({ pageData, pages, contacts, products }) => (
   <Layout pages={pages} contact={contacts[0]}>
     <Head>
       <title>Клуб Карники (Украина) - Продукция</title>
+      <meta
+        name="Description"
+        content="Предложение материала карники от членов* Клуба Карники (Украина) на 2020г."
+      ></meta>
     </Head>
     <HeroImage bannerData={pageData} />
     <Features features={products} isProducts={true} />
