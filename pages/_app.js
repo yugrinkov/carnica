@@ -5,6 +5,7 @@ import uuidv4 from 'uuid/v4'
 import Loading from '../components/loading'
 import pages from '../api/pages.json'
 import contacts from '../api/contacts.json'
+import TagManager from 'react-gtm-module'
 
 class MyApp extends App {
   state = {
@@ -42,6 +43,14 @@ class MyApp extends App {
     router.events.on('routeChangeStart', routeChangeStartHandler)
     router.events.on('routeChangeComplete', routeChangeEndHandler)
     router.events.on('routeChangeError', routeChangeEndHandler)
+
+    if (process.env.CARNICA_IS_PRODUCTION) {
+      const tagManagerArgs = {
+        gtmId: 'GTM-KBTF4RX',
+      }
+
+      TagManager.initialize(tagManagerArgs)
+    }
   }
 
   render() {

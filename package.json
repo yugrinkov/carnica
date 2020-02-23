@@ -6,7 +6,7 @@
     "dev": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next dev",
     "build:local": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next build",
     "build": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=https://carnica.now.sh next build",
-    "build:prod": "cross-env CARNICA_PUBLIC_URL=[PROD_URL] next build",
+    "build:prod": "cross-env CARNICA_IS_PRODUCTION=true CARNICA_PUBLIC_URL=http://carnica.ho.ua next build",
     "export": "next export",
     "start": "next start",
     "deploy": "now --token=$NOW_TOKEN --prod",
@@ -38,6 +38,7 @@
     "npm": "^6.13.4",
     "react": "16.11.0",
     "react-dom": "16.11.0",
+    "react-gtm-module": "^2.0.8",
     "ts-jest": "^24.2.0",
     "uuidv4": "^6.0.2"
   },

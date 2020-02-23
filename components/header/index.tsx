@@ -3,7 +3,11 @@ import Link from 'next/link'
 
 const Header: React.FC<any> = ({ pages = [] }) => {
   const getPageLink = ref => {
-    if (ref === 'http://carnica.ho.ua/forum') return ref
+    if (
+      ref === 'http://carnica.ho.ua/forum' ||
+      !process.env.CARNICA_IS_PRODUCTION
+    )
+      return ref
     return ref === '/' ? ref + 'index.html' : ref + '.html'
   }
   return (

@@ -1,11 +1,11 @@
 import React from 'react'
 import styles from './index.module.scss'
-import Link from 'next/link'
 
 const Features = props => {
   const { features = [], isBenefits, isProducts } = props
+
   const getDescription = description => {
-    return { __html: '*' + description }
+    return { __html: description }
   }
 
   const benefitsClassName = isBenefits && 'benefits'
@@ -29,18 +29,17 @@ const Features = props => {
       <div className="col-md-4 col-sm-6">
         <div className={`divider-wrapper ${cartColorClassName}`}>
           <div className={styles.feature}>
-            {!feature.sellers ? (
-              <i className={`fa ${iconClassName}`}></i>
-            ) : (
-              <div className={styles.sellers}>{sellers(feature.sellers)}</div>
-            )}
+            {!feature.sellers && <i className={`fa ${iconClassName}`}></i>}
             <h2>{feature.title}</h2>
-            {feature.priceLabel && <h3>{feature.priceLabel}*</h3>}
+            {feature.priceLabel && <h3>{feature.priceLabel}</h3>}
           </div>
-          <p
+          <div
             className={styles.description}
             dangerouslySetInnerHTML={getDescription(feature.description)}
-          ></p>
+          ></div>
+          {feature.sellers && (
+            <div className={styles.sellers}>{sellers(feature.sellers)}</div>
+          )}
         </div>
       </div>
     )
@@ -55,15 +54,7 @@ const Features = props => {
       )}
       <div className="container">
         <div className="row">
-          {features.map((feature, index) =>
-            !props.isBenefits && !props.isProducts ? (
-              <Link key={feature.id} href="/products">
-                {buildItem(feature, index)}
-              </Link>
-            ) : (
-              buildItem(feature, index)
-            ),
-          )}
+          {features.map((feature, index) => buildItem(feature, index))}
         </div>
       </div>
     </div>
