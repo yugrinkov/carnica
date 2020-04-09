@@ -35,7 +35,7 @@
     "classcat": "^4.0.2",
     "cypress": "^3.8.1",
     "dotenv": "^8.2.0",
-    "next": "9.1.2",
+    "next": "9.3.2",
     "next-images": "^1.2.0",
     "node-sass": "^4.13.0",
     "npm": "^6.13.4",
