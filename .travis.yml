@@ -5,7 +5,7 @@ cache:
     - node_modules
     - .next/cache
 node_js:
-  - '8'
+  - '10'
 jobs:
   include:
     - stage: eslint & build
