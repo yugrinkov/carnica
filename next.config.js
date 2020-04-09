@@ -6,6 +6,7 @@ module.exports = withImages(
     cssModules: true,
     env: {
       CARNICA_PUBLIC_URL: process.env.CARNICA_PUBLIC_URL,
+      CARNICA_IS_PRODUCTION: process.env.CARNICA_IS_PRODUCTION,
     },
   }),
 )

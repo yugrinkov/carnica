@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /cgi-bin
+Disallow: /phorum
+Disallow: /phpbb
+Disallow: /phpBB
+Sitemap: http://carnica.ho.ua/sitemap.xml

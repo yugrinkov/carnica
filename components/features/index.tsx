@@ -26,7 +26,7 @@ const Features = props => {
   const buildItem = (feature, index) => {
     const cartColorClassName = isProducts ? '' : `divider-${index + 1}`
     return (
-      <div className="col-md-4 col-sm-6">
+      <div key={feature.id} className="col-md-4 col-sm-6">
         <div className={`divider-wrapper ${cartColorClassName}`}>
           <div className={styles.feature}>
             {!feature.sellers && <i className={`fa ${iconClassName}`}></i>}

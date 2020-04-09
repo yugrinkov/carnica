@@ -3,11 +3,7 @@ import Link from 'next/link'
 
 const Header: React.FC<any> = ({ pages = [] }) => {
   const getPageLink = ref => {
-    if (
-      ref === 'http://carnica.ho.ua/forum' ||
-      !process.env.CARNICA_IS_PRODUCTION
-    )
-      return ref
+    if (!process.env.CARNICA_IS_PRODUCTION) return ref
     return ref === '/' ? ref + 'index.html' : ref + '.html'
   }
   return (
@@ -27,7 +23,7 @@ const Header: React.FC<any> = ({ pages = [] }) => {
               <span className="icon icon-bar"></span>
               <span className="icon icon-bar"></span>
             </button>
-            <Link href="/">
+            <Link href="/index.html">
               <a href="#" className="navbar-brand">
                 <img
                   src="/images/logo.png"
@@ -41,15 +37,14 @@ const Header: React.FC<any> = ({ pages = [] }) => {
             <ul className="nav navbar-nav navbar-right">
               {pages.map(page => (
                 <li key={page.id}>
-                  {page.linkTarget === '_self' ? (
-                    <Link href={getPageLink(page.linkReference)}>
-                      <a>{page.linkText}</a>
-                    </Link>
-                  ) : (
-                    <a href={page.linkReference}>{page.linkText}</a>
-                  )}
+                  <Link href={getPageLink(page.linkReference)}>
+                    <a>{page.linkText}</a>
+                  </Link>
                 </li>
               ))}
+              <li>
+                <a href="http://carnica.ho.ua/forum">Форум</a>
+              </li>
             </ul>
           </div>
         </div>

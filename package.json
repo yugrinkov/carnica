@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next dev",
     "build:local": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=http://localhost:3000 next build",
-    "build": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=https://carnica.now.sh next build",
+    "build": "npm run json:generate && cross-env CARNICA_PUBLIC_URL=https://carnica.now.sh CARNICA_IS_PRODUCTION=true next build",
     "build:prod": "cross-env CARNICA_IS_PRODUCTION=true CARNICA_PUBLIC_URL=http://carnica.ho.ua next build",
-    "export": "next export",
+    "export": "next export && node copySiteMap.js",
     "start": "next start",
     "deploy": "now --token=$NOW_TOKEN --prod",
     "test": "jest",
@@ -20,7 +20,8 @@
     "e2e:test": "npm run build:local && start-server-and-test start http://localhost:3000 cypress:local:run",
     "e2e:test:report": "npx mochawesome-report-generator --reportDir public/ --cdn true --charts true cypress/reports/mochawesome/mochawesome.json",
     "eslint": "npx eslint . --ext .ts,.tsx",
-    "json:generate": "cross-env CARNICA_API_URL=https://intense-sands-31533.herokuapp.com node jsonGeneration"
+    "json:generate": "cross-env CARNICA_API_URL=https://intense-sands-31533.herokuapp.com node jsonGeneration",
+    "push": "node pushCode.js"
   },
   "pre-commit": [
     "eslint"
@@ -30,8 +31,10 @@
     "@zeit/next-sass": "^1.0.1",
     "array-includes": "^3.1.1",
     "axios": "^0.19.0",
+    "basic-ftp": "^4.5.4",
     "classcat": "^4.0.2",
     "cypress": "^3.8.1",
+    "dotenv": "^8.2.0",
     "next": "9.1.2",
     "next-images": "^1.2.0",
     "node-sass": "^4.13.0",
