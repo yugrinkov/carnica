@@ -1,0 +1,62 @@
+@import '../../styles/variables.scss';
+
+.boxContainer {
+  padding-left: 0;
+  padding-right: 0;
+  @include desktop {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.hot {
+  @include desktop {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+  .box {
+    background-color: $gold;
+    padding: 3%;
+    display: flex;
+    @include desktop {
+      flex-direction: row;
+      align-items: center;
+    }
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    .title {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      @include desktop {
+        border-right: 3px solid #c14000;
+      }
+      padding-right: 20px;
+      flex-shrink: 0.3;
+      border-right: 0;
+      .icon {
+        height: 50px;
+        width: 50px;
+      }
+      .text {
+        color: #c14000;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: 10px;
+      }
+    }
+    .content {
+      @include desktop {
+        padding-left: 20px;
+        margin-top: 0;
+      }
+      color: $black;
+      margin-top: 10px;
+    }
+  }
+}
