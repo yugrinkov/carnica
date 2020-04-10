@@ -14,12 +14,14 @@ jobs:
       name: Unit tests (Jest)
       script: npm run test
     - stage: e2e tests & deploy
-      name: End-to-end tests and deployment
+      name: End-to-end tests
       provider: script
       script:
         - npm run e2e:test || true
         - npm run e2e:test:report || true
-        - npm run deploy
+        # - npm run build
+        # - npm run export
+        # - npm run deploy
       skip_cleanup: true
       on:
         branch: master
