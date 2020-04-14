@@ -30,7 +30,4 @@ jobs:
       name: Production deployment
       if: branch = master
       -script:
-        - echo "Run only on master"
-        - npm run build
-        - npm run export
         - npm run push

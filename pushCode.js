@@ -1,5 +1,4 @@
 const ftp = require('basic-ftp')
-const config = require('dotenv').config().parsed
 
 connectAndPushFiles()
 
@@ -8,9 +7,9 @@ async function connectAndPushFiles() {
   client.ftp.verbose = true
   try {
     await client.access({
-      host: config.FTP_HOST || process.env.FTP_HOST,
-      user: config.FTP_USER || process.env.FTP_USER,
-      password: config.FTP_PASSWORD || process.env.FTP_PASSWORD,
+      host: process.env.FTP_HOST,
+      user: process.env.FTP_USER,
+      password: process.env.FTP_PASSWORD,
       secure: false,
     })
     console.log(await client.list())
