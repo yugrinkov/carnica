@@ -8,9 +8,9 @@ async function connectAndPushFiles() {
   client.ftp.verbose = true
   try {
     await client.access({
-      host: config.FTP_HOST,
-      user: config.FTP_USER,
-      password: config.FTP_PASSWORD,
+      host: config.FTP_HOST || process.env.FTP_HOST,
+      user: config.FTP_USER || process.env.FTP_USER,
+      password: config.FTP_PASSWORD || process.env.FTP_PASSWORD,
       secure: false,
     })
     console.log(await client.list())
