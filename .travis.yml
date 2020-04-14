@@ -28,7 +28,7 @@ jobs:
       skip_cleanup: true
     - stage: prod deployment
       name: Production deployment
-      if: branch = masterscript
+      if: branch = master
       -script:
         - echo "Run only on master"
         - npm run build
