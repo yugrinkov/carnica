@@ -5,6 +5,7 @@ jobs:
   include:
     - stage: eslint & build
       name: Code quality and compilation
+      if: branch = develop
       script:
         - npm run eslint
         - npm run build:local
@@ -12,9 +13,11 @@ jobs:
         - npm run export
     - stage: unit tests
       name: Unit tests (Jest)
+      if: branch = develop
       script: npm run test
     - stage: e2e tests & deploy
       name: End-to-end tests
+      if: branch = develop
       provider: script
       script:
         - npm run e2e:test || true
@@ -23,5 +26,7 @@ jobs:
         # - npm run export
         # - npm run deploy
       skip_cleanup: true
-      on:
-        branch: master
+    - stage: run only master
+      name: Only master
+      if: branch = master
+      script: echo "Run only on master"
