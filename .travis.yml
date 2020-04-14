@@ -26,6 +26,10 @@ jobs:
         # - npm run export
         # - npm run deploy
       skip_cleanup: true
-    - stage: run only master
-      name: Only master
-      script: echo "Run only on master"
+    - stage: prod deployment
+      name: Production deployment
+      script:
+        - echo "Run only on master"
+        - npm run build
+        - npm run export
+        - npm run push

@@ -14,8 +14,8 @@ async function connectAndPushFiles() {
       secure: false,
     })
     console.log(await client.list())
-    await client.ensureDir('htdocs')
-    await client.uploadFromDir('out')
+    //await client.ensureDir('htdocs')
+    //await client.uploadFromDir('out')
   } catch (err) {
     console.log(err)
   }
