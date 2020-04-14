@@ -3,7 +3,7 @@ const ftp = require('basic-ftp')
 connectAndPushFiles()
 
 async function connectAndPushFiles() {
-  const client = new ftp.Client()
+  const client = new ftp.Client(0)
   client.ftp.verbose = true
   try {
     await client.access({
