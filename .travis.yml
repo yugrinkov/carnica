@@ -30,4 +30,6 @@ jobs:
       name: Production deployment
       if: branch = master
       -script:
+        - npm run build
+        - npm run export
         - npm run push
