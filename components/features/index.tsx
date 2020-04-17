@@ -26,7 +26,7 @@ const Features = props => {
   const buildItem = (feature, index) => {
     const cartColorClassName = isProducts ? '' : `divider-${index + 1}`
     return (
-      <div key={feature.id} className="col-md-4 col-sm-6">
+      <div data-test="feature" key={feature.id} className="col-md-4 col-sm-6">
         <div className={`divider-wrapper ${cartColorClassName}`}>
           <div className={styles.feature}>
             {!feature.sellers && <i className={`fa ${iconClassName}`}></i>}
@@ -38,7 +38,9 @@ const Features = props => {
             dangerouslySetInnerHTML={getDescription(feature.description)}
           ></div>
           {feature.sellers && (
-            <div className={styles.sellers}>{sellers(feature.sellers)}</div>
+            <div data-test="sellers" className={styles.sellers}>
+              {sellers(feature.sellers)}
+            </div>
           )}
         </div>
       </div>
@@ -46,7 +48,10 @@ const Features = props => {
   }
 
   return (
-    <div className={`divider ${benefitsClassName} ${productsClassName}`}>
+    <div
+      data-test="features"
+      className={`divider ${benefitsClassName} ${productsClassName}`}
+    >
       {props.isBenefits ? (
         <h2>Преимущества материала «made in Ukraine»</h2>
       ) : (
