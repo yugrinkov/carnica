@@ -21,10 +21,9 @@ jobs:
       provider: script
       script:
         - npm run e2e:test || true
+        - npm run e2e:report:merge || true
         - npm run e2e:test:report || true
-        # - npm run build
-        # - npm run export
-        # - npm run deploy
+        - npm run e2e:report:deploy
       skip_cleanup: true
     - stage: run only on master
       name: Only master

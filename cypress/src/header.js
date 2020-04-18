@@ -23,10 +23,11 @@ export default class Header {
     Header.checkLink($navBar, 5, 'Форум', 'http://carnica.ho.ua/forum')
   }
 
-  static clickLink(text) {
+  static clickLink(text, pathname) {
     cy.get('header')
       .find('li')
       .contains(text)
       .click()
+    cy.location('pathname', { timeout: 60000 }).should('include', pathname)
   }
 }
