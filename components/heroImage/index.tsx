@@ -9,7 +9,7 @@ interface Props {
 const HeroImage: React.FC<Props> = ({ bannerData = {}, children }) => {
   return (
     <>
-      <div className={styles.heroImage}>
+      <div data-test="heroImage" className={styles.heroImage}>
         <img src={bannerData.heroImageBanner.url} alt="Hero Image" />
         {children}
 

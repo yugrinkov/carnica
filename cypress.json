@@ -1,6 +1,7 @@
 {
-    "reporter": "cypress-multi-reporters",
-    "reporterOptions": {
-      "configFile": "reporter.json"
-    }
+  "videoUploadOnPasses": false,
+  "reporter": "cypress-multi-reporters",
+  "reporterOptions": {
+    "configFile": "reporter.json"
   }
+}

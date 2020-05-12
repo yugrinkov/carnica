@@ -12,8 +12,8 @@ const Products: NextPage<any> = ({ pageData, pages, contacts, products }) => (
     <Head>
       <title>Клуб Карники (Украина) - Продукция</title>
       <meta
-        name="Description"
-        content="Предложение материала карники от членов* Клуба Карники (Украина) на 2020г."
+        name="description"
+        content="Продажа материала карники от членов* Клуба Карники (Украина) на 2020г: пчеломатки карника, пчелопакеты, зрелые маточники, прививка на месте"
       ></meta>
     </Head>
     <HeroImage bannerData={pageData} />

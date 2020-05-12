@@ -33,3 +33,5 @@ yarn-error.log*
 /api/
 
 .env
+
+/mochawesome-report/

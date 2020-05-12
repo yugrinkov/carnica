@@ -10,12 +10,12 @@ const Footer = props => {
           <div className={`col-md-10 col-sm-4 ${styles.info}`}>
             <img src="images/logo.png" className={styles.img} alt="logo" />
 
-            <p>
+            <p data-test="phone">
               <a href={`tel:${props.contact.phone}`}>
                 <i className="fa fa-phone"></i> {props.contact.phone}
               </a>
             </p>
-            <p>
+            <p data-test="email">
               <a href={`mailto:${props.contact.email}`}>
                 <i className="fa fa-envelope-o"></i> {props.contact.email}
               </a>
