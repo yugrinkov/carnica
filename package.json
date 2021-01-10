@@ -21,7 +21,7 @@
     "e2e:test:report": "npx mochawesome-report-generator --reportDir public/ --cdn true --charts true mochawesome.json",
     "e2e:report:deploy": "now -n carnica ./public/mochawesome.html --token=$NOW_TOKEN --prod",
     "eslint": "npx eslint . --ext .ts,.tsx",
-    "json:generate": "cross-env CARNICA_API_URL=https://intense-sands-31533.herokuapp.com node jsonGeneration",
+    "json:generate": "cross-env CARNICA_API_URL=https://mighty-peak-21241.herokuapp.com node jsonGeneration",
     "push": "node pushCode.js"
   },
   "pre-commit": [
