@@ -7,6 +7,9 @@ interface Props {
 }
 
 const HeroImage: React.FC<Props> = ({ bannerData = {}, children }) => {
+  const getText = text => {
+    return { __html: text }
+  }
   return (
     <>
       <div data-test="heroImage" className={styles.heroImage}>
@@ -16,7 +19,10 @@ const HeroImage: React.FC<Props> = ({ bannerData = {}, children }) => {
         <div className={`${styles.content} container`}>
           <h1>{bannerData.heroImageTitle}</h1>
 
-          <p className="mt20">{bannerData.heroImageSubtitle}</p>
+          <p
+            className="mt20"
+            dangerouslySetInnerHTML={getText(bannerData.heroImageSubtitle)}
+          ></p>
           <div className={styles.arrow}>
             <span></span>
             <span></span>

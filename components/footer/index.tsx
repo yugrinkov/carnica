@@ -32,9 +32,6 @@ const Footer = props => {
           <div className="col-md-2 col-sm-4">
             <h3>Полезные ссылки</h3>
             <p>
-              <a href="http://apijournal.com">Пасічний Журнал</a>
-            </p>
-            <p>
               <a href="https://www2.hu-berlin.de/beebreed/ZWS/">
                 www.BeeBreed.eu
               </a>
